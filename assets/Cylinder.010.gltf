@@ -1,0 +1,117 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.4.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cylinder.010"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Aluminium",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.06680663675069809,
+                    0.06680663675069809,
+                    0.06680663675069809,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.2310924232006073
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.010",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 66,
+            "max" : [
+                0.02499999850988388,
+                0.5249999761581421,
+                0.02500000037252903
+            ],
+            "min" : [
+                -0.02500000223517418,
+                -0.5249999761581421,
+                -0.02500000037252903
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 66,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 66,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 180,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 792,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 792,
+            "byteOffset" : 792
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 528,
+            "byteOffset" : 1584
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 360,
+            "byteOffset" : 2112
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 2472,
+            "uri" : "data:application/octet-stream;base64,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"
+        }
+    ]
+}

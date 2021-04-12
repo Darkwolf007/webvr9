@@ -1,0 +1,129 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.4.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.038",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "scale" : [
+                1,
+                1,
+                0.00298424088396132
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "alphaMode" : "BLEND",
+            "doubleSided" : true,
+            "name" : "Glass",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.07999999821186066
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.054",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.5368223190307617,
+                0.43051183223724365,
+                1.0000102519989014
+            ],
+            "min" : [
+                -0.5368223190307617,
+                -0.43051183223724365,
+                -1.0000102519989014
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 36,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 288
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 192,
+            "byteOffset" : 576
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 72,
+            "byteOffset" : 768
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 840,
+            "uri" : "data:application/octet-stream;base64,MG0Jvwxs3L5WAIA/MG0Jvwxs3L5WAIA/MG0Jvwxs3L5WAIA/MG0Jvwxs3D5WAIA/MG0Jvwxs3D5WAIA/MG0Jvwxs3D5WAIA/MG0Jvwxs3L5U/3+/MG0Jvwxs3L5U/3+/MG0Jvwxs3L5U/3+/MG0Jvwxs3D5U/3+/MG0Jvwxs3D5U/3+/MG0Jvwxs3D5U/3+/MG0JPwxs3L5U/38/MG0JPwxs3L5U/38/MG0JPwxs3L5U/38/MG0JPwxs3D5U/38/MG0JPwxs3D5U/38/MG0JPwxs3D5U/38/MG0JPwxs3L5WAIC/MG0JPwxs3L5WAIC/MG0JPwxs3L5WAIC/MG0JPwxs3D5WAIC/MG0JPwxs3D5WAIC/MG0JPwxs3D5WAIC/AACAvwAAAAAAAACAGkE3sQAAgL8AAACAtTOgNwAAAAAAAIA/AACAvwAAAAAAAACAGkE3sQAAgD8AAACAtTOgNwAAAAAAAIA/AACAvwAAAAAAAACAtTOgtwAAAAAAAIC/GkE3sQAAgL8AAACAAACAvwAAAAAAAACAtTOgtwAAAAAAAIC/GkE3sQAAgD8AAACAGkE3sQAAgL8AAACAtTOgNwAAAAAAAIA/AACAPwAAAAAAAACAGkE3sQAAgD8AAACAtTOgNwAAAAAAAIA/AACAPwAAAAAAAACAtTOgtwAAAAAAAIC/GkE3sQAAgL8AAACAAACAPwAAAAAAAACAtTOgtwAAAAAAAIC/GkE3sQAAgD8AAACAAACAPwAAAAAAAACAAADAPgAAgD8AAAA+AACAPgAAwD4AAAAAAAAgPwAAgD8AAGA/AACAPgAAID8AAAAAAADAPgAAQD8AAMA+AABAPwAAAD4AAAA/AAAgPwAAQD8AACA/AABAPwAAYD8AAAA/AADAPgAAgD4AAMA+AACAPgAAwD4AAIA+AAAgPwAAgD4AACA/AACAPgAAID8AAIA+AADAPgAAAD8AAMA+AAAAPwAAwD4AAAA/AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AAADAAkAAAAJAAYABwAKABUABwAVABIAFAAXABEAFAARAA4ADQAQAAUADQAFAAIACAATAAwACAAMAAEAFgALAAQAFgAEAA8A"
+        }
+    ]
+}

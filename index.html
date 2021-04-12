@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+    <!-- Generated automatically by AFRAME Exporter for Blender - https://silverslade.itch.io/a-frame-blender-exporter -->
+    <head>
+        <title>WebXR Application</title>
+        <link rel="icon" type="image/png" href="favicon.ico"/>
+        <meta name="description" content="3D Application">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+        <script type="text/javascript" src="js/webxr.js"></script>
+        <script type="text/javascript" src="js/joystick.js"></script>
+        <script type="text/javascript" src="js/camera-cube-env.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body onload="init();">
+        <a-scene   shadow="type: basic; autoUpdate: false;">
+            <!-- Assets -->
+            <a-assets>
+				<a-asset-item id="Carpet" src="./assets/Carpet.gltf"></a-asset-item>
+				<a-asset-item id="Chair" src="./assets/Chair.gltf"></a-asset-item>
+				<a-asset-item id="Chair.001" src="./assets/Chair.001.gltf"></a-asset-item>
+				<a-asset-item id="Chair.002" src="./assets/Chair.002.gltf"></a-asset-item>
+				<a-asset-item id="Chair.003" src="./assets/Chair.003.gltf"></a-asset-item>
+				<a-asset-item id="Chair.004" src="./assets/Chair.004.gltf"></a-asset-item>
+				<a-asset-item id="Chocofur.free.Beds.002" src="./assets/Chocofur.free.Beds.002.gltf"></a-asset-item>
+				<a-asset-item id="Chocofur.free.Beds.01.003" src="./assets/Chocofur.free.Beds.01.003.gltf"></a-asset-item>
+				<a-asset-item id="Circle" src="./assets/Circle.gltf"></a-asset-item>
+				<a-asset-item id="Circle.001" src="./assets/Circle.001.gltf"></a-asset-item>
+				<a-asset-item id="Circle.007" src="./assets/Circle.007.gltf"></a-asset-item>
+				<a-asset-item id="Circle.019" src="./assets/Circle.019.gltf"></a-asset-item>
+				<a-asset-item id="Circle.021" src="./assets/Circle.021.gltf"></a-asset-item>
+				<a-asset-item id="Concrete.Wall.A" src="./assets/Concrete.Wall.A.gltf"></a-asset-item>
+				<a-asset-item id="Concrete.Wall.B" src="./assets/Concrete.Wall.B.gltf"></a-asset-item>
+				<a-asset-item id="Cube" src="./assets/Cube.gltf"></a-asset-item>
+				<a-asset-item id="Cube.001" src="./assets/Cube.001.gltf"></a-asset-item>
+				<a-asset-item id="Cube.002" src="./assets/Cube.002.gltf"></a-asset-item>
+				<a-asset-item id="Cube.003" src="./assets/Cube.003.gltf"></a-asset-item>
+				<a-asset-item id="Cube.004" src="./assets/Cube.004.gltf"></a-asset-item>
+				<a-asset-item id="Cube.005" src="./assets/Cube.005.gltf"></a-asset-item>
+				<a-asset-item id="Cube.006" src="./assets/Cube.006.gltf"></a-asset-item>
+				<a-asset-item id="Cube.007" src="./assets/Cube.007.gltf"></a-asset-item>
+				<a-asset-item id="Cube.008" src="./assets/Cube.008.gltf"></a-asset-item>
+				<a-asset-item id="Cube.009" src="./assets/Cube.009.gltf"></a-asset-item>
+				<a-asset-item id="Cube.010" src="./assets/Cube.010.gltf"></a-asset-item>
+				<a-asset-item id="Cube.011" src="./assets/Cube.011.gltf"></a-asset-item>
+				<a-asset-item id="Cube.012" src="./assets/Cube.012.gltf"></a-asset-item>
+				<a-asset-item id="Cube.013" src="./assets/Cube.013.gltf"></a-asset-item>
+				<a-asset-item id="Cube.014" src="./assets/Cube.014.gltf"></a-asset-item>
+				<a-asset-item id="Cube.015" src="./assets/Cube.015.gltf"></a-asset-item>
+				<a-asset-item id="Cube.016" src="./assets/Cube.016.gltf"></a-asset-item>
+				<a-asset-item id="Cube.017" src="./assets/Cube.017.gltf"></a-asset-item>
+				<a-asset-item id="Cube.018" src="./assets/Cube.018.gltf"></a-asset-item>
+				<a-asset-item id="Cube.019" src="./assets/Cube.019.gltf"></a-asset-item>
+				<a-asset-item id="Cube.020" src="./assets/Cube.020.gltf"></a-asset-item>
+				<a-asset-item id="Cube.021" src="./assets/Cube.021.gltf"></a-asset-item>
+				<a-asset-item id="Cube.022" src="./assets/Cube.022.gltf"></a-asset-item>
+				<a-asset-item id="Cube.023" src="./assets/Cube.023.gltf"></a-asset-item>
+				<a-asset-item id="Cube.024" src="./assets/Cube.024.gltf"></a-asset-item>
+				<a-asset-item id="Cube.025" src="./assets/Cube.025.gltf"></a-asset-item>
+				<a-asset-item id="Cube.027" src="./assets/Cube.027.gltf"></a-asset-item>
+				<a-asset-item id="Cube.028" src="./assets/Cube.028.gltf"></a-asset-item>
+				<a-asset-item id="Cube.029" src="./assets/Cube.029.gltf"></a-asset-item>
+				<a-asset-item id="Cube.031" src="./assets/Cube.031.gltf"></a-asset-item>
+				<a-asset-item id="Cube.032" src="./assets/Cube.032.gltf"></a-asset-item>
+				<a-asset-item id="Cube.036" src="./assets/Cube.036.gltf"></a-asset-item>
+				<a-asset-item id="Cube.037" src="./assets/Cube.037.gltf"></a-asset-item>
+				<a-asset-item id="Cube.038" src="./assets/Cube.038.gltf"></a-asset-item>
+				<a-asset-item id="Cube.039" src="./assets/Cube.039.gltf"></a-asset-item>
+				<a-asset-item id="Cube.040" src="./assets/Cube.040.gltf"></a-asset-item>
+				<a-asset-item id="Cube.042" src="./assets/Cube.042.gltf"></a-asset-item>
+				<a-asset-item id="Cube.043" src="./assets/Cube.043.gltf"></a-asset-item>
+				<a-asset-item id="Cube.044" src="./assets/Cube.044.gltf"></a-asset-item>
+				<a-asset-item id="Cube.045" src="./assets/Cube.045.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.001" src="./assets/Cylinder.001.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.002" src="./assets/Cylinder.002.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.003" src="./assets/Cylinder.003.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.004" src="./assets/Cylinder.004.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.005" src="./assets/Cylinder.005.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.006" src="./assets/Cylinder.006.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.007" src="./assets/Cylinder.007.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.008" src="./assets/Cylinder.008.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.009" src="./assets/Cylinder.009.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.010" src="./assets/Cylinder.010.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.011" src="./assets/Cylinder.011.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.012" src="./assets/Cylinder.012.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.013" src="./assets/Cylinder.013.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.014" src="./assets/Cylinder.014.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.015" src="./assets/Cylinder.015.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.016" src="./assets/Cylinder.016.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.017" src="./assets/Cylinder.017.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.018" src="./assets/Cylinder.018.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.019" src="./assets/Cylinder.019.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.020" src="./assets/Cylinder.020.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.021" src="./assets/Cylinder.021.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.022" src="./assets/Cylinder.022.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.023" src="./assets/Cylinder.023.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.024" src="./assets/Cylinder.024.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.025" src="./assets/Cylinder.025.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder.026" src="./assets/Cylinder.026.gltf"></a-asset-item>
+				<a-asset-item id="DoorA" src="./assets/DoorA.gltf"></a-asset-item>
+				<a-asset-item id="DoorA.001" src="./assets/DoorA.001.gltf"></a-asset-item>
+				<a-asset-item id="DoorA.002" src="./assets/DoorA.002.gltf"></a-asset-item>
+				<a-asset-item id="DoorA.003" src="./assets/DoorA.003.gltf"></a-asset-item>
+				<a-asset-item id="DoorA.004" src="./assets/DoorA.004.gltf"></a-asset-item>
+				<a-asset-item id="DoorA.005" src="./assets/DoorA.005.gltf"></a-asset-item>
+				<a-asset-item id="DoorHandle" src="./assets/DoorHandle.gltf"></a-asset-item>
+				<a-asset-item id="DoorHandle.001" src="./assets/DoorHandle.001.gltf"></a-asset-item>
+				<a-asset-item id="DoorHandle.002" src="./assets/DoorHandle.002.gltf"></a-asset-item>
+				<a-asset-item id="DoorHandle.003" src="./assets/DoorHandle.003.gltf"></a-asset-item>
+				<a-asset-item id="DoorHandle.004" src="./assets/DoorHandle.004.gltf"></a-asset-item>
+				<a-asset-item id="DoorHandle.005" src="./assets/DoorHandle.005.gltf"></a-asset-item>
+				<a-asset-item id="Floor" src="./assets/Floor.gltf"></a-asset-item>
+				<a-asset-item id="FloorBoard.008" src="./assets/FloorBoard.008.gltf"></a-asset-item>
+				<a-asset-item id="FloorSelectA" src="./assets/FloorSelectA.gltf"></a-asset-item>
+				<a-asset-item id="FloorSelectAMarker" src="./assets/FloorSelectAMarker.gltf"></a-asset-item>
+				<a-asset-item id="FloorSelectB" src="./assets/FloorSelectB.gltf"></a-asset-item>
+				<a-asset-item id="FloorSelectBMarker" src="./assets/FloorSelectBMarker.gltf"></a-asset-item>
+				<a-asset-item id="Flower" src="./assets/Flower.gltf"></a-asset-item>
+				<a-asset-item id="Flower.001" src="./assets/Flower.001.gltf"></a-asset-item>
+				<a-asset-item id="FlowerPot" src="./assets/FlowerPot.gltf"></a-asset-item>
+				<a-asset-item id="FlowerPot.001" src="./assets/FlowerPot.001.gltf"></a-asset-item>
+				<a-asset-item id="Plane" src="./assets/Plane.gltf"></a-asset-item>
+				<a-asset-item id="Plane.001" src="./assets/Plane.001.gltf"></a-asset-item>
+				<a-asset-item id="Plane.002" src="./assets/Plane.002.gltf"></a-asset-item>
+				<a-asset-item id="Plane.003" src="./assets/Plane.003.gltf"></a-asset-item>
+				<a-asset-item id="Plane.004" src="./assets/Plane.004.gltf"></a-asset-item>
+				<a-asset-item id="Plane.005" src="./assets/Plane.005.gltf"></a-asset-item>
+				<a-asset-item id="Plane.006" src="./assets/Plane.006.gltf"></a-asset-item>
+				<a-asset-item id="Plane.008" src="./assets/Plane.008.gltf"></a-asset-item>
+				<a-asset-item id="Plane.009" src="./assets/Plane.009.gltf"></a-asset-item>
+				<a-asset-item id="Plane.010" src="./assets/Plane.010.gltf"></a-asset-item>
+				<a-asset-item id="Plane.011" src="./assets/Plane.011.gltf"></a-asset-item>
+				<a-asset-item id="Plane.012" src="./assets/Plane.012.gltf"></a-asset-item>
+				<a-asset-item id="Plane.013" src="./assets/Plane.013.gltf"></a-asset-item>
+				<a-asset-item id="Plane.017" src="./assets/Plane.017.gltf"></a-asset-item>
+				<a-asset-item id="Plane.018" src="./assets/Plane.018.gltf"></a-asset-item>
+				<a-asset-item id="Plane.019" src="./assets/Plane.019.gltf"></a-asset-item>
+				<a-asset-item id="Plane.023" src="./assets/Plane.023.gltf"></a-asset-item>
+				<a-asset-item id="Plane.048" src="./assets/Plane.048.gltf"></a-asset-item>
+				<a-asset-item id="Plane.050" src="./assets/Plane.050.gltf"></a-asset-item>
+				<a-asset-item id="Plane.057" src="./assets/Plane.057.gltf"></a-asset-item>
+				<a-asset-item id="Plane.058" src="./assets/Plane.058.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.001" src="./assets/Skrinka-Kuchyn-60.001.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.002" src="./assets/Skrinka-Kuchyn-60.002.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.003" src="./assets/Skrinka-Kuchyn-60.003.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.004" src="./assets/Skrinka-Kuchyn-60.004.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.005" src="./assets/Skrinka-Kuchyn-60.005.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.006" src="./assets/Skrinka-Kuchyn-60.006.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.007" src="./assets/Skrinka-Kuchyn-60.007.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.008" src="./assets/Skrinka-Kuchyn-60.008.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.009" src="./assets/Skrinka-Kuchyn-60.009.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.011" src="./assets/Skrinka-Kuchyn-60.011.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.012" src="./assets/Skrinka-Kuchyn-60.012.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.013" src="./assets/Skrinka-Kuchyn-60.013.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.014" src="./assets/Skrinka-Kuchyn-60.014.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.015" src="./assets/Skrinka-Kuchyn-60.015.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.016" src="./assets/Skrinka-Kuchyn-60.016.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.017" src="./assets/Skrinka-Kuchyn-60.017.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.018" src="./assets/Skrinka-Kuchyn-60.018.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.019" src="./assets/Skrinka-Kuchyn-60.019.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.020" src="./assets/Skrinka-Kuchyn-60.020.gltf"></a-asset-item>
+				<a-asset-item id="Skrinka-Kuchyn-60.022" src="./assets/Skrinka-Kuchyn-60.022.gltf"></a-asset-item>
+				<a-asset-item id="SM.Socket" src="./assets/SM.Socket.gltf"></a-asset-item>
+				<a-asset-item id="SM.Socket.001" src="./assets/SM.Socket.001.gltf"></a-asset-item>
+				<a-asset-item id="SM.Socket.002" src="./assets/SM.Socket.002.gltf"></a-asset-item>
+				<a-asset-item id="SM.Socket.003" src="./assets/SM.Socket.003.gltf"></a-asset-item>
+				<a-asset-item id="SM.Socket.004" src="./assets/SM.Socket.004.gltf"></a-asset-item>
+				<a-asset-item id="SM.Socket.005" src="./assets/SM.Socket.005.gltf"></a-asset-item>
+				<a-asset-item id="Table" src="./assets/Table.gltf"></a-asset-item>
+				<a-asset-item id="TV" src="./assets/TV.gltf"></a-asset-item>
+				<a-asset-item id="TV-Table" src="./assets/TV-Table.gltf"></a-asset-item>
+				<a-asset-item id="Wall.A" src="./assets/Wall.A.gltf"></a-asset-item>
+				<a-asset-item id="Wall.B" src="./assets/Wall.B.gltf"></a-asset-item>
+				<a-asset-item id="Wall.C" src="./assets/Wall.C.gltf"></a-asset-item>
+				<a-asset-item id="Wall.D" src="./assets/Wall.D.gltf"></a-asset-item>
+				<a-asset-item id="WallSelectAMarker" src="./assets/WallSelectAMarker.gltf"></a-asset-item>
+				<a-asset-item id="WallSelectBMarker" src="./assets/WallSelectBMarker.gltf"></a-asset-item>
+                <img id="sky"                 src="./resources/sky.jpg">
+                <img id="icon-play"           src="./resources/play.png">
+                <img id="icon-pause"          src="./resources/pause.png">
+                <img id="icon-play-skip-back" src="./resources/play-skip-back.png">
+                <img id="icon-mute"           src="./resources/mute.png">
+                <img id="icon-volume-low"     src="./resources/volume-low.png">
+                <img id="icon-volume-high"    src="./resources/volume-high.png">
+            </a-assets>
+
+            <!-- Entities -->
+            
+			<a-entity id="#Carpet"  gltf-model="#Carpet" scale="1 1 1" position="1.620827317237854 17.645156860351562 -4.009563446044922" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Chair"  gltf-model="#Chair" scale="1 1 1" position="-2.2269856929779053 17.936969757080078 4.919014930725098" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Chair.001"  gltf-model="#Chair.001" scale="1 1 1" position="-1.6893943548202515 17.936969757080078 4.919014930725098" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Chair.002"  gltf-model="#Chair.002" scale="1 1 1" position="-1.6893624067306519 17.936969757080078 4.1810479164123535" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Chair.003"  gltf-model="#Chair.003" scale="1 1 1" position="-2.2269535064697266 17.936969757080078 4.1810479164123535" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Chair.004"  gltf-model="#Chair.004" scale="1 1 1" position="2.81913423538208 17.936969757080078 -3.3131232261657715" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Chocofur.free.Beds.002"  gltf-model="#Chocofur.free.Beds.002" scale="1 1 1" position="2.5524096488952637 18.035663604736328 5.828217029571533" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Chocofur.free.Beds.01.003"  gltf-model="#Chocofur.free.Beds.01.003" scale="1 1 1" position="-2.803508996963501 18.24991798400879 -4.961171627044678" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Circle"  gltf-model="#Circle" scale="1 1 1" position="0.42551371455192566 18.954547882080078 1.815206527709961" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Circle.001"  gltf-model="#Circle.001" scale="1 1 1" position="1.9745699167251587 18.619611740112305 0.655949592590332" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Circle.007"  gltf-model="#Circle.007" scale="1 1 1" position="-0.4594636559486389 18.72308921813965 0.7003074884414673" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Circle.019"  gltf-model="#Circle.019" scale="1 1 1" position="0.12904676795005798 18.50240707397461 1.994662880897522" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Circle.021"  gltf-model="#Circle.021" scale="1 1 1" position="-0.1132340058684349 19.10584259033203 1.967160701751709" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Concrete.Wall.A"  gltf-model="#Concrete.Wall.A" scale="1 1 1" position="-3.276062488555908 18.88495635986328 0.4476289749145508" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Concrete.Wall.B"  gltf-model="#Concrete.Wall.B" scale="1 1 1" position="3.769927501678467 18.804956436157227 0.3331173360347748" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube"  gltf-model="#Cube" scale="1 1 1" position="0.202872633934021 18.879714965820312 0.4317864775657654" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.001"  gltf-model="#Cube.001" scale="1 1 1" position="0.46643388271331787 18.784955978393555 4.159091472625732" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.002"  gltf-model="#Cube.002" scale="1 1 1" position="1.8813302516937256 18.804956436157227 2.5316789150238037" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.003"  gltf-model="#Cube.003" scale="1 1 1" position="1.137956142425537 18.784955978393555 -0.2687264084815979" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.004"  gltf-model="#Cube.004" scale="1 1 1" position="-0.29256880283355713 18.88495635986328 1.1314762830734253" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.005"  gltf-model="#Cube.005" scale="1 1 1" position="-0.29256880283355713 18.784955978393555 -1.202362060546875" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.006"  gltf-model="#Cube.006" scale="1 1 1" position="0.6274369955062866 18.784955978393555 -3.8477940559387207" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.007"  gltf-model="#Cube.007" scale="1 1 1" position="1.3792668581008911 18.88495635986328 -2.6736679077148438" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.008"  gltf-model="#Cube.008" scale="1 1 1" position="2.496857166290283 18.88495635986328 1.1314762830734253" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.009"  gltf-model="#Cube.009" scale="1 1 1" position="2.1570208072662354 18.88495635986328 0.970919132232666" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.010"  gltf-model="#Cube.010" scale="1 1 1" position="0.9454763531684875 18.88495635986328 2.1140635013580322" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.011"  gltf-model="#Cube.011" scale="1 1 1" position="2.184264659881592 18.785659790039062 -6.351170539855957" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.012"  gltf-model="#Cube.012" scale="1 1 1" position="1.2192682027816772 18.785659790039062 -6.351170539855957" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.013"  gltf-model="#Cube.013" scale="1 1 1" position="-0.4491201937198639 18.785659790039062 -6.351170539855957" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.014"  gltf-model="#Cube.014" scale="1 1 1" position="-1.6491163969039917 18.785659790039062 -6.251172065734863" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.015"  gltf-model="#Cube.015" scale="1 1 1" position="2.429938793182373 18.785659790039062 7.1464338302612305" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.016"  gltf-model="#Cube.016" scale="1 1 1" position="1.4209436178207397 18.785659790039062 7.1464338302612305" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.017"  gltf-model="#Cube.017" scale="1 1 1" position="-0.9891210794448853 18.785659790039062 5.906435966491699" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.018"  gltf-model="#Cube.018" scale="1 1 1" position="-2.189117431640625 18.785659790039062 6.006434440612793" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.019"  gltf-model="#Cube.019" scale="1 1 1" position="-2.4442765712738037 17.877180099487305 -5.044821262359619" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.020"  gltf-model="#Cube.020" scale="1 1 1" position="-0.947273850440979 17.684955596923828 1.1314756870269775" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.021"  gltf-model="#Cube.021" scale="1 1 1" position="-0.6673570275306702 18.535337448120117 1.1059694290161133" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.022"  gltf-model="#Cube.022" scale="1 1 1" position="-2.720428466796875 18.061601638793945 -5.048093795776367" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.023"  gltf-model="#Cube.023" scale="1 1 1" position="-2.826064109802246 18.88495635986328 -0.2687264084815979" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.024"  gltf-model="#Cube.024" scale="1 1 1" position="1.7219308614730835 18.409955978393555 -2.267167568206787" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.025"  gltf-model="#Cube.025" scale="1 1 1" position="-2.826064109802246 18.88495635986328 2.5316789150238037" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.027"  gltf-model="#Cube.027" scale="1 1 1" position="-1.0116069316864014 20.028417587280273 -6.041217803955078" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.028"  gltf-model="#Cube.028" scale="1 1 1" position="-1.585945725440979 20.028417587280273 5.738888263702393" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.029"  gltf-model="#Cube.029" scale="1 1 1" position="3.71254825592041 17.64365005493164 -0.9802279472351074" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.031"  gltf-model="#Cube.031" scale="1 1 1" position="3.2299952507019043 18.067819595336914 -5.65903902053833" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.032"  gltf-model="#Cube.032" scale="1 1 1" position="3.2299952507019043 18.93354606628418 -5.65903902053833" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.036"  gltf-model="#Cube.036" scale="1 1 1" position="-1.4701324701309204 18.236196517944336 8.161066055297852" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.037"  gltf-model="#Cube.037" scale="1 1 1" position="0.339286208152771 18.236196517944336 7.6918182373046875" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.038"  gltf-model="#Cube.038" scale="1 1 1" position="-3.2781949043273926 18.236196517944336 7.592230319976807" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.039"  gltf-model="#Cube.039" scale="1 1 1" position="-2.868351459503174 18.53501319885254 0.8313019871711731" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.040"  gltf-model="#Cube.040" scale="1 1 1" position="-2.584503650665283 17.684955596923828 1.1314756870269775" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.042"  gltf-model="#Cube.042" scale="1 1 1" position="3.1980464458465576 18.572011947631836 -3.309603691101074" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.043"  gltf-model="#Cube.043" scale="1 1 1" position="-0.18338800966739655 19.016525268554688 1.9646035432815552" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.044"  gltf-model="#Cube.044" scale="1 1 1" position="1.657713532447815 16.27214241027832 0.07355380058288574" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cube.045"  gltf-model="#Cube.045" scale="1 1 1" position="-1.7054682970046997 16.317398071289062 0.03836345672607422" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.001"  gltf-model="#Cylinder.001" scale="1 1 1" position="-1.7150568962097168 20.12051010131836 1.1582319736480713" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.002"  gltf-model="#Cylinder.002" scale="1 1 1" position="-1.7150568962097168 20.12051010131836 4.375816345214844" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.003"  gltf-model="#Cylinder.003" scale="1 1 1" position="2.1284942626953125 20.12051010131836 -4.505668640136719" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.004"  gltf-model="#Cylinder.004" scale="1 1 1" position="3.3814663887023926 20.12051010131836 4.221376895904541" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.005"  gltf-model="#Cylinder.005" scale="1 1 1" position="3.1166155338287354 20.12051010131836 -0.022341519594192505" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.006"  gltf-model="#Cylinder.006" scale="1 1 1" position="2.968535900115967 20.12051010131836 -1.497058391571045" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.007"  gltf-model="#Cylinder.007" scale="1 1 1" position="0.731034517288208 20.12051010131836 -1.497058391571045" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.008"  gltf-model="#Cylinder.008" scale="1 1 1" position="0.3376537561416626 18.189956665039062 8.161066055297852" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.009"  gltf-model="#Cylinder.009" scale="1 1 1" position="-3.2792882919311523 18.189956665039062 8.161066055297852" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.010"  gltf-model="#Cylinder.010" scale="1 1 1" position="-3.2792882919311523 18.189956665039062 7.021428108215332" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.011"  gltf-model="#Cylinder.011" scale="1 1 1" position="0.3376537561416626 18.189956665039062 7.221432685852051" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.012"  gltf-model="#Cylinder.012" scale="1 1 1" position="0.3392862379550934 17.823888778686523 8.134252548217773" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.013"  gltf-model="#Cylinder.013" scale="1 1 1" position="0.3392862379550934 17.823888778686523 7.249275207519531" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.014"  gltf-model="#Cylinder.014" scale="1 1 1" position="0.3392862379550934 18.65277671813965 8.134252548217773" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.015"  gltf-model="#Cylinder.015" scale="1 1 1" position="0.3392862379550934 18.65277671813965 7.249275207519531" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.016"  gltf-model="#Cylinder.016" scale="1 1 1" position="0.3110893964767456 17.823888778686523 8.161150932312012" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.017"  gltf-model="#Cylinder.017" scale="1 1 1" position="0.3110893964767456 18.65277671813965 8.161150932312012" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.018"  gltf-model="#Cylinder.018" scale="1 1 1" position="-3.2524826526641846 17.823888778686523 8.161150932312012" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.019"  gltf-model="#Cylinder.019" scale="1 1 1" position="-3.2524826526641846 18.65277671813965 8.161150932312012" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.020"  gltf-model="#Cylinder.020" scale="1 1 1" position="-3.2781949043273926 17.823888778686523 8.134252548217773" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.021"  gltf-model="#Cylinder.021" scale="1 1 1" position="-3.2781949043273926 17.823888778686523 7.050106048583984" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.022"  gltf-model="#Cylinder.022" scale="1 1 1" position="-3.2781949043273926 18.65277671813965 8.134252548217773" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.023"  gltf-model="#Cylinder.023" scale="1 1 1" position="-3.2781949043273926 18.65277671813965 7.050106048583984" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.024"  gltf-model="#Cylinder.024" scale="1 1 1" position="-2.629303216934204 20.12051010131836 -4.068017959594727" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.025"  gltf-model="#Cylinder.025" scale="1 1 1" position="0.9439573884010315 20.12051010131836 0.8241531848907471" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Cylinder.026"  gltf-model="#Cylinder.026" scale="1 1 1" position="-2.629303216934204 20.12051010131836 -2.0338802337646484" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorA"  gltf-model="#DoorA" scale="1 1 1" position="1.0290124416351318 18.684959411621094 -2.8509249687194824" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorA.001"  gltf-model="#DoorA.001" scale="1 1 1" position="-0.6951791048049927 18.684959411621094 -0.44995081424713135" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorA.002"  gltf-model="#DoorA.002" scale="1 1 1" position="0.8892735242843628 18.684959411621094 3.0588462352752686" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorA.003"  gltf-model="#DoorA.003" scale="1 1 1" position="3.5439157485961914 18.684959411621094 2.02064847946167" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorA.004"  gltf-model="#DoorA.004" scale="1 1 1" position="1.8639801740646362 18.684959411621094 -0.362181693315506" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorA.005"  gltf-model="#DoorA.005" scale="1 1 1" position="3.771705150604248 18.684959411621094 -0.9802274703979492" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorHandle"  gltf-model="#DoorHandle" scale="1 1 1" position="1.3713457584381104 18.654569625854492 -2.8500542640686035" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorHandle.001"  gltf-model="#DoorHandle.001" scale="1 1 1" position="-1.0375124216079712 18.654569625854492 -0.4508212208747864" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorHandle.002"  gltf-model="#DoorHandle.002" scale="1 1 1" position="1.134186863899231 18.654569625854492 2.819664478302002" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorHandle.003"  gltf-model="#DoorHandle.003" scale="1 1 1" position="3.5447866916656494 18.654569625854492 1.6783185005187988" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorHandle.004"  gltf-model="#DoorHandle.004" scale="1 1 1" position="2.206310749053955 18.654569625854492 -0.36155375838279724" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#DoorHandle.005"  gltf-model="#DoorHandle.005" scale="1 1 1" position="3.7725753784179688 18.654569625854492 -1.4225611686706543" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Floor"  gltf-model="#Floor" scale="1 1 1" position="0.7820581793785095 17.63495635986328 1.6698322296142578" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#FloorBoard.008"  gltf-model="#FloorBoard.008" scale="1 1 1" position="0.4508034288883209 17.930667877197266 0.9992823004722595" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#FloorSelectA"  gltf-model="#FloorSelectA" scale="1 1 1" position="0.41628018021583557 19.476802825927734 -2.6070241928100586" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#FloorSelectAMarker"  gltf-model="#FloorSelectAMarker" scale="1 1 1" position="0.28146347403526306 -30.011140823364258 -2.5871102809906006" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#FloorSelectB"  gltf-model="#FloorSelectB" scale="1 1 1" position="0.7496135234832764 19.200469970703125 -2.6070241928100586" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#FloorSelectBMarker"  gltf-model="#FloorSelectBMarker" scale="1 1 1" position="1.4038336277008057 -30.616107940673828 -2.5871098041534424" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Flower"  gltf-model="#Flower" scale="1 1 1" position="0.0870586410164833 18.149797439575195 2.878180980682373" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Flower.001"  gltf-model="#Flower.001" scale="1 1 1" position="-2.8926005363464355 18.149797439575195 -3.733006715774536" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#FlowerPot"  gltf-model="#FlowerPot" scale="1 1 1" position="0.0704333484172821 17.7581844329834 2.868201971054077" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#FlowerPot.001"  gltf-model="#FlowerPot.001" scale="1 1 1" position="-2.9092257022857666 17.7581844329834 -3.742985725402832" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane"  gltf-model="#Plane" scale="1 1 1" position="3.769927501678467 17.63495635986328 -0.9802274703979492" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.001"  gltf-model="#Plane.001" scale="1 1 1" position="0.7820581793785095 20.13495635986328 1.59483003616333" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.002"  gltf-model="#Plane.002" scale="1 1 1" position="-0.39859068393707275 19.13329315185547 1.1024856567382812" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.003"  gltf-model="#Plane.003" scale="1 1 1" position="2.116579532623291 19.056392669677734 0.6553704738616943" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.004"  gltf-model="#Plane.004" scale="1 1 1" position="-0.8499058485031128 18.275712966918945 -2.560307025909424" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.005"  gltf-model="#Plane.005" scale="1 1 1" position="-1.9242812395095825 17.99835968017578 4.535164833068848" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.006"  gltf-model="#Plane.006" scale="1 1 1" position="0.546935498714447 18.107479095458984 -4.573114395141602" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.008"  gltf-model="#Plane.008" scale="1 1 1" position="-3.136545181274414 19.13329315185547 0.8320271372795105" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.009"  gltf-model="#Plane.009" scale="1 1 1" position="-1.1990998983383179 18.216381072998047 3.9468111991882324" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.010"  gltf-model="#Plane.010" scale="1 1 1" position="1.559261679649353 18.535171508789062 -0.8177539110183716" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.011"  gltf-model="#Plane.011" scale="1 1 1" position="1.4838393926620483 18.623750686645508 -5.051455497741699" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.012"  gltf-model="#Plane.012" scale="1 1 1" position="0.5829468369483948 19.424135208129883 -2.616248369216919" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.013"  gltf-model="#Plane.013" scale="1 1 1" position="1.8887656927108765 18.3662052154541 4.099874973297119" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.017"  gltf-model="#Plane.017" scale="1 1 1" position="0.9511446952819824 17.635562896728516 0.5213550329208374" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.018"  gltf-model="#Plane.018" scale="1 1 1" position="1.9653081893920898 18.021644592285156 1.4942891597747803" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.019"  gltf-model="#Plane.019" scale="1 1 1" position="1.7856221199035645 18.189918518066406 1.4942890405654907" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.023"  gltf-model="#Plane.023" scale="1 1 1" position="-0.030981076881289482 18.392608642578125 1.933595061302185" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.048"  gltf-model="#Plane.048" scale="1 1 1" position="-0.6765425205230713 18.466148376464844 0.6933334469795227" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.050"  gltf-model="#Plane.050" scale="1 1 1" position="-0.6814285516738892 18.543018341064453 1.7336180210113525" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.057"  gltf-model="#Plane.057" scale="1 1 1" position="1.9266654253005981 18.369583129882812 0.6485806107521057" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Plane.058"  gltf-model="#Plane.058" scale="1 1 1" position="0.06347942352294922 17.989620208740234 1.2272104024887085" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.001"  gltf-model="#Skrinka-Kuchyn-60.001" scale="1 1 1" position="-0.6625849008560181 17.851076126098633 0.0871349647641182" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.002"  gltf-model="#Skrinka-Kuchyn-60.002" scale="1 1 1" position="-0.532575786113739 19.749433517456055 0.09376012533903122" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.003"  gltf-model="#Skrinka-Kuchyn-60.003" scale="1 1 1" position="-0.6625849008560181 17.851076126098633 1.7289788722991943" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.004"  gltf-model="#Skrinka-Kuchyn-60.004" scale="1 1 1" position="-0.532575786113739 19.749433517456055 1.7356042861938477" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.005"  gltf-model="#Skrinka-Kuchyn-60.005" scale="1 1 1" position="-0.6992353796958923 18.193124771118164 1.2083340883255005" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.006"  gltf-model="#Skrinka-Kuchyn-60.006" scale="1 1 1" position="-0.5534049868583679 19.748600006103516 1.2127763032913208" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.007"  gltf-model="#Skrinka-Kuchyn-60.007" scale="1 1 1" position="-0.6992353796958923 18.193124771118164 2.2546184062957764" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.008"  gltf-model="#Skrinka-Kuchyn-60.008" scale="1 1 1" position="-0.5534049868583679 19.748600006103516 2.259060859680176" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.009"  gltf-model="#Skrinka-Kuchyn-60.009" scale="1 1 1" position="1.867873191833496 18.161861419677734 0.6500075459480286" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.011"  gltf-model="#Skrinka-Kuchyn-60.011" scale="1 1 1" position="-2.8740766048431396 17.851076126098633 1.5758172273635864" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.012"  gltf-model="#Skrinka-Kuchyn-60.012" scale="1 1 1" position="-3.0040857791900635 19.749433517456055 1.5691920518875122" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.013"  gltf-model="#Skrinka-Kuchyn-60.013" scale="1 1 1" position="-2.8740766048431396 17.851076126098633 0.9758171439170837" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.014"  gltf-model="#Skrinka-Kuchyn-60.014" scale="1 1 1" position="-3.0040857791900635 19.749433517456055 0.9691919088363647" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.015"  gltf-model="#Skrinka-Kuchyn-60.015" scale="1 1 1" position="-0.6625849008560181 17.851076126098633 0.6826943159103394" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.016"  gltf-model="#Skrinka-Kuchyn-60.016" scale="1 1 1" position="-2.8740766048431396 17.851076126098633 0.3758170008659363" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.017"  gltf-model="#Skrinka-Kuchyn-60.017" scale="1 1 1" position="-3.0040857791900635 19.749433517456055 0.3691917359828949" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.018"  gltf-model="#Skrinka-Kuchyn-60.018" scale="1 1 1" position="-2.8374245166778564 18.187808990478516 -0.06898844242095947" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.019"  gltf-model="#Skrinka-Kuchyn-60.019" scale="1 1 1" position="-2.9832546710968018 19.748600006103516 -0.07343071699142456" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.020"  gltf-model="#Skrinka-Kuchyn-60.020" scale="1 1 1" position="-2.8427541255950928 18.289749145507812 2.1757493019104004" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Skrinka-Kuchyn-60.022"  gltf-model="#Skrinka-Kuchyn-60.022" scale="1 1 1" position="-0.532575786113739 19.749433517456055 0.6893194317817688" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#SM.Socket"  gltf-model="#SM.Socket" scale="1 1 1" position="0.5579426884651184 17.821056365966797 -3.8620481491088867" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#SM.Socket.001"  gltf-model="#SM.Socket.001" scale="1 1 1" position="-3.1730711460113525 17.821056365966797 -3.5114829540252686" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#SM.Socket.002"  gltf-model="#SM.Socket.002" scale="1 1 1" position="-3.1730711460113525 17.821056365966797 5.549828052520752" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#SM.Socket.003"  gltf-model="#SM.Socket.003" scale="1 1 1" position="-0.12175250798463821 17.821056365966797 5.753439426422119" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#SM.Socket.004"  gltf-model="#SM.Socket.004" scale="1 1 1" position="0.39693912863731384 17.821056365966797 4.591564655303955" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#SM.Socket.005"  gltf-model="#SM.Socket.005" scale="1 1 1" position="-0.36206355690956116 18.786439895629883 2.3162243366241455" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Table"  gltf-model="#Table" scale="1 1 1" position="3.266235828399658 18.229124069213867 -3.651090383529663" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#TV"  gltf-model="#TV" scale="1 1 1" position="0.3276437520980835 18.269363403320312 -4.888506889343262" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#TV-Table"  gltf-model="#TV-Table" scale="1 1 1" position="0.3211129903793335 17.88495635986328 -4.8897809982299805" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Wall.A"  gltf-model="#Wall.A" scale="1 1 1" position="-1.450756311416626 18.835308074951172 5.906432151794434" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Wall.B"  gltf-model="#Wall.B" scale="1 1 1" position="0.38293397426605225 18.88495635986328 6.626431465148926" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Wall.C"  gltf-model="#Wall.C" scale="1 1 1" position="1.984104871749878 18.818758010864258 7.0464324951171875" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#Wall.D"  gltf-model="#Wall.D" scale="1 1 1" position="0.653602123260498 18.810483932495117 -6.2511701583862305" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#WallSelectAMarker"  gltf-model="#WallSelectAMarker" scale="1 1 1" position="2.168781042098999 -30.011140823364258 -2.5871102809906006" visible="true" shadow="cast: false" ></a-entity>
+			<a-entity id="#WallSelectBMarker"  gltf-model="#WallSelectBMarker" scale="1 1 1" position="3.2911510467529297 -30.616107940673828 -2.5871098041534424" visible="true" shadow="cast: false" ></a-entity>
+
+            <!-- Camera -->
+            <a-entity id="player" 
+                position="0 -0.2 0" 
+                movement-controls="speed: 0.10000000149011612;">
+                <a-entity id="camera" 
+                    camera="near: 0.001" 
+                    position="0 1.7000000476837158 0" 
+                    look-controls="pointerLockEnabled: true">
+                        <a-entity id="cursor" cursor="fuse: false;" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 	0.1 0.1 0.1; to: 1 1 1"
+                            position="0 0 -0.1"
+                            geometry="primitive: circle; radius: 0.001;"
+                            material="color: #CCC; shader: flat;"
+                            >
+                        </a-entity>
+                </a-entity>
+                    <a-entity id="leftHand" oculus-touch-controls="hand: left" vive-controls="hand: left"></a-entity>
+					<a-entity id="rightHand" laser-controls oculus-touch-controls="hand: right" vive-controls="hand: right" ></a-entity>
+            </a-entity>
+
+            <!-- Lights -->
+            <a-entity light="intensity: 1.0; castShadow: false; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79; shadowCameraNear: 0; shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2" position="1.36586 7.17965 1"></a-entity>
+            <a-entity light="type: ambient; intensity: 1.0"></a-entity>
+
+            <!-- Sky -->
+            <a-sky color="#ECECEC"></a-sky>
+        </a-scene>
+    </body>
+</html>
+<!-- Generated automatically by AFRAME Exporter for Blender - https://silverslade.itch.io/a-frame-blender-exporter -->
